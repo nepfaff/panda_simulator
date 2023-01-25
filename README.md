@@ -8,6 +8,10 @@ Latest Stable Release (ROS Melodic): [![GitHub release (latest by date)](https:/
 
 *(version 1.0.0)* - **Now Supports [MoveIt!](https://moveit.ros.org/)** (See [version log](https://github.com/justagist/panda_simulator/blob/melodic-devel/versionLog.md) for details)
 
+## Notes about this fork
+
+This fork and the `rlg_realworld_stack` branch were created for compatibility with [this](https://github.com/liruiw/franka_ros_interface) Franka ROS Interface fork.
+
 ## Features
 
 - Low-level *controllers* (joint position, velocity, torque) available that can be controlled through ROS topics (including position control for gripper) or [Python API][fri-repo].
