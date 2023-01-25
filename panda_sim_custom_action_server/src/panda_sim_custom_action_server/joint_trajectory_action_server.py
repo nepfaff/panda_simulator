@@ -36,8 +36,8 @@ import math
 import operator
 import numpy as np
 
-import bezier
-import minjerk
+from . import bezier
+from . import minjerk
 
 import rospy
 
@@ -55,7 +55,7 @@ from trajectory_msgs.msg import (
     JointTrajectoryPoint,
 )
 
-import pid
+from . import pid
 import franka_dataflow
 import franka_interface
 
@@ -280,7 +280,7 @@ class JointTrajectoryActionServer(object):
         num_traj_dim = sum(dimensions_dict.values())
         num_b_values = len(['b0', 'b1', 'b2', 'b3'])
         b_matrix = np.zeros(shape=(num_joints, num_traj_dim, num_traj_pts-1, num_b_values))
-        for jnt in xrange(num_joints):
+        for jnt in range(num_joints):
             traj_array = np.zeros(shape=(len(trajectory_points), num_traj_dim))
             for idx, point in enumerate(trajectory_points):
                 current_point = list()
@@ -322,7 +322,7 @@ class JointTrajectoryActionServer(object):
         num_traj_dim = sum(dimensions_dict.values())
         num_m_values = len(['a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'tm'])
         m_matrix = np.zeros(shape=(num_joints, num_traj_dim, num_traj_pts-1, num_m_values))
-        for jnt in xrange(num_joints):
+        for jnt in range(num_joints):
             traj_array = np.zeros(shape=(len(trajectory_points), num_traj_dim))
             for idx, point in enumerate(trajectory_points):
                 current_point = list()
